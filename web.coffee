@@ -23,7 +23,7 @@ app.get "/auth/callback", (req, res) ->
 app.get "/key/:id", (req, res) ->
   res.get req.params.id, (err, data) ->
     return res.send("no such key", 404) if err
-    res.send "data"
+    res.send data
 
 app.start (port) ->
   console.log "listening on #{port}"
