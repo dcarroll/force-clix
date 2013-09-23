@@ -3,6 +3,7 @@ coffee  = require("coffee-script")
 dd      = require("./lib/dd")
 express = require("express")
 log     = require("./lib/logger").init("force-cli")
+redis   = require("redis-url").init(process.env.REDIS_URL)
 stdweb  = require("./lib/stdweb")
 uuid    = require("node-uuid")
 
@@ -14,6 +15,7 @@ app.get "/", (req, res) ->
 app.get "/auth/callback", (req, res) ->
   console.log "req.body", req.body
   console.log "req.params", req.params
+  console.log "req.query", req.query
   res.send "ok"
 
 app.start (port) ->
