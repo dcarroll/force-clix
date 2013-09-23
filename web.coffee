@@ -18,9 +18,13 @@ app.get "/auth/callback", (req, res) ->
     .set(id, JSON.stringify(req.params))
     .expire(id, 300)
     .exec (err, foo) ->
-      console.log "err", err
-      console.log "foo", foo
       res.send id
+
+app.get "/key/:id", (req, res) ->
+  res.get id, (err, data) ->
+    return res.send("no such key", 404) if err
+    res.contentType "application/json"
+    res.send "data"
 
 app.start (port) ->
   console.log "listening on #{port}"
