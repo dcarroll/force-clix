@@ -5,6 +5,7 @@ express = require("express")
 log     = require("./lib/logger").init("force-cli")
 redis   = require("redis-url").connect(process.env.REDIS_URL)
 stdweb  = require("./lib/stdweb")
+url     = require("url")
 uuid    = require("node-uuid")
 
 app = stdweb("force-cli")
@@ -14,6 +15,10 @@ app.get "/", (req, res) ->
 
 app.get "/auth/callback", (req, res) ->
   id = uuid.v4()
+  parts = req.url.split("#")
+  parts.shift()
+  query = url.parse(parts.join("#"))
+  console.log "query", query
   console.log "req", req
   console.log "req.query", req.query
   redis.multi()
