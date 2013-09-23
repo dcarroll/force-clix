@@ -10,26 +10,26 @@ uuid    = require("node-uuid")
 
 app = stdweb("force-cli")
 
+app.use express.static("#{__dirname}/public")
+
 app.get "/", (req, res) ->
   res.send "ok"
 
 app.get "/auth/callback", (req, res) ->
+  res.render "auth.jade"
+
+app.post "/key", (req, res) ->
   id = uuid.v4()
-  parts = req.url.split("#")
-  parts.shift()
-  query = url.parse(parts.join("#"))
-  console.log "query", query
-  console.log "req.url", req.url
-  console.log "req.query", req.query
   redis.multi()
-    .set(id, JSON.stringify(req.query))
+    .set(id, JSON.stringify(req.body))
     .expire(id, 300)
-    .exec (err, foo) ->
+    .exec (err) ->
       res.send id
 
 app.get "/key/:id", (req, res) ->
   redis.get req.params.id, (err, data) ->
     return res.send("no such key", 404) if err
+    res.contentType "application/json"
     res.send data
 
 app.start (port) ->

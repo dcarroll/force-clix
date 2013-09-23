@@ -1,0 +1,14 @@
+extends layout
+
+block script
+
+  script(src="/js/auth.js")
+
+block content
+
+  .modal
+    .modal-header
+      h3 Authorization Key
+    .modal-body
+      p Enter the following Authorization Key when prompted by the Force.com CLI:
+      input.input-xlarge#key
