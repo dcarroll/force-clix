@@ -2,12 +2,17 @@ async   = require("async")
 coffee  = require("coffee-script")
 dd      = require("./lib/dd")
 express = require("express")
-log     = require("./lib/logger").init("template")
+log     = require("./lib/logger").init("force-cli")
 stdweb  = require("./lib/stdweb")
+uuid    = require("node-uuid")
 
-app = stdweb("template")
+app = stdweb("force-cli")
 
 app.get "/", (req, res) ->
+  res.send "ok"
+
+app.get "/auth/callback", (req, res) ->
+  console.log "req.body", req.body
   res.send "ok"
 
 app.start (port) ->
