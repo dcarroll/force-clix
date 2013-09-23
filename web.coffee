@@ -18,8 +18,8 @@ app.get "/auth/callback", (req, res) ->
   parts = req.url.split("#")
   parts.shift()
   query = url.parse(parts.join("#"))
+  console.log "query", query
   console.log "req.url", req.url
-  console.log "req", req
   console.log "req.query", req.query
   redis.multi()
     .set(id, JSON.stringify(req.query))
