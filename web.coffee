@@ -21,7 +21,7 @@ app.get "/auth/callback", (req, res) ->
       res.send id
 
 app.get "/key/:id", (req, res) ->
-  res.get req.params.id, (err, data) ->
+  redis.get req.params.id, (err, data) ->
     return res.send("no such key", 404) if err
     res.send data
 
