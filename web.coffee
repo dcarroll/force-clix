@@ -15,7 +15,7 @@ app.get "/", (req, res) ->
 app.get "/auth/callback", (req, res) ->
   id = uuid.v4()
   redis.multi()
-    .set(id, JSON.stringify(req.params))
+    .set(id, JSON.stringify(req.query))
     .expire(id, 300)
     .exec (err, foo) ->
       res.send id
