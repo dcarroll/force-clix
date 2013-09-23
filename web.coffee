@@ -13,6 +13,7 @@ app.get "/", (req, res) ->
 
 app.get "/auth/callback", (req, res) ->
   console.log "req.body", req.body
+  console.log "req.params", req.params
   res.send "ok"
 
 app.start (port) ->
