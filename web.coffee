@@ -13,10 +13,14 @@ app.get "/", (req, res) ->
   res.send "ok"
 
 app.get "/auth/callback", (req, res) ->
-  console.log "req.body", req.body
-  console.log "req.params", req.params
-  console.log "req.query", req.query
-  res.send "ok"
+  id = uuid.v4()
+  redis.multi()
+    .set(id, JSON.stringify(req.params))
+    .expire(id, 300)
+    .exec (err, foo) ->
+      console.log "err", err
+      console.log "foo", foo
+      res.send id
 
 app.start (port) ->
   console.log "listening on #{port}"
