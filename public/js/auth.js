@@ -1,5 +1,4 @@
 $(window).ready(function() {
-  console.log(window.location.href);
   var parts = window.location.href.split('#');
   parts.shift();
   var querystring = parts.join('#');
@@ -13,7 +12,12 @@ $(window).ready(function() {
     var value = unescape(parts.join('='));
     query[name] = value;
   }
-  $.post('/key', query, function(data) {
-    $('#key').val(data);
+  pairs = [];
+  for (var name in query) {
+    pairs.push(name + '=' + escape(value));
+  }
+  var url = 'http://localhost:' + query.state + '?' + pairs.join('&');
+  $.get(url, function(data) {
+    // redirect to localhost
   });
 });

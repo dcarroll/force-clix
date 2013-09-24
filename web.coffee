@@ -20,6 +20,7 @@ app.get "/auth/callback", (req, res) ->
 
 app.post "/key", (req, res) ->
   id = uuid.v4()
+  console.log "req.body", req.body
   redis.multi()
     .set(id, JSON.stringify(req.body))
     .expire(id, 300)
