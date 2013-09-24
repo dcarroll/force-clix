@@ -18,20 +18,5 @@ app.get "/", (req, res) ->
 app.get "/auth/callback", (req, res) ->
   res.render "auth.jade"
 
-app.post "/key", (req, res) ->
-  id = uuid.v4()
-  console.log "req.body", req.body
-  redis.multi()
-    .set(id, JSON.stringify(req.body))
-    .expire(id, 300)
-    .exec (err) ->
-      res.send id
-
-app.get "/key/:id", (req, res) ->
-  redis.get req.params.id, (err, data) ->
-    return res.send("no such key", 404) if err
-    res.contentType "application/json"
-    res.send data
-
 app.start (port) ->
   console.log "listening on #{port}"
