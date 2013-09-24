@@ -18,6 +18,6 @@ $(window).ready(function() {
   }
   var url = 'http://localhost:' + query.state + '?' + pairs.join('&');
   $.get(url, function(data) {
-    // redirect to localhost
+    window.close();
   });
 });
