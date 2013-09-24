@@ -14,7 +14,7 @@ $(window).ready(function() {
   }
   pairs = [];
   for (var name in query) {
-    pairs.push(name + '=' + escape(value));
+    pairs.push(name + '=' + escape(query[name]));
   }
   var url = 'http://localhost:' + query.state + '?' + pairs.join('&');
   $.get(url, function(data) {
