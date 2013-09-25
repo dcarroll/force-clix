@@ -16,7 +16,10 @@ app.get "/", (req, res) ->
   res.send "ok"
 
 app.get "/auth/callback", (req, res) ->
-  res.render "auth.jade"
+  res.render "callback.jade"
+
+app.get "/auth/complete", (req, res) ->
+  res.render "complete.jade"
 
 app.start (port) ->
   console.log "listening on #{port}"

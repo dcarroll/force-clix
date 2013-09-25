@@ -18,5 +18,6 @@ $(window).ready(function() {
   }
   var url = 'http://localhost:' + query.state + '?' + pairs.join('&');
   $.get(url, function(data) {
+    window.location.href = '/auth/complete'
   });
 });
