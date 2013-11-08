@@ -3,7 +3,7 @@ $(window).ready(function() {
   parts.shift();
   var querystring = parts.join('#');
   var pairs = querystring.split('&');
-  var query = {}
+  var query = {};
   var pairs = querystring.split('&');
   for (var idx in pairs) {
     var pair = pairs[idx];
@@ -17,7 +17,12 @@ $(window).ready(function() {
     pairs.push(name + '=' + escape(query[name]));
   }
   var url = 'http://localhost:' + query.state + '?' + pairs.join('&');
-  $.get(url, function(data) {
-    window.location.href = '/auth/complete'
+  var req = $.ajax({url: url, crossDomain: false});
+  req.done(function() {
+    window.location.assign('/auth/complete');
+  });
+  req.fail(function() {
+    $('div#error').show();
+    $('a#redirect').attr('href', url);
   });
 });
