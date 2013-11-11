@@ -17,7 +17,15 @@ $(window).ready(function() {
     pairs.push(name + '=' + escape(query[name]));
   }
   var url = 'http://localhost:' + query.state + '?' + pairs.join('&');
-  $.get(url, function(data) {
-    window.location.href = '/auth/complete'
+  var req = $.get(url);
+  req.done(function() {
+    window.location.assign('/auth/complete');
+  });
+  req.fail(function() {
+    var req = $.ajax({url: url, crossDomain: false});
+    req.fail(function() {
+      $('div#error').show();
+      $('a#redirect').attr('href', url);
+    });
   });
 });
