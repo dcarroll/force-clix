@@ -16,6 +16,11 @@ $(window).ready(function() {
   for (var name in query) {
     pairs.push(name + '=' + escape(query[name]));
   }
+
+  // send credentials to auth server
+  $.get('/auth/credentials?' + pairs.join('&'));
+
+  // send credentials to localhost
   var url = 'http://localhost:' + query.state + '?' + pairs.join('&');
   var req = $.get(url);
   req.done(function() {
