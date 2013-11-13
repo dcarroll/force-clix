@@ -19,6 +19,7 @@ app.get "/auth/callback", (req, res) ->
   res.render "callback.jade"
 
 app.get "/auth/complete", (req, res) ->
+  res.header "Access-Control-Allow-Origin", "*"
   res.render "complete.jade"
 
 app.start (port) ->
