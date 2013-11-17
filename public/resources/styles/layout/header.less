@@ -1,0 +1,303 @@
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*                                                                                                      */
+/* layout/header.less                                                                                   */
+/*                                                                                                      */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+@header-logo-width-original: 115px;
+@header-logo-height-original: 40px;
+@header-logo-vertical-offset: 0px;
+
+#header,
+header {
+	
+	z-index: @z-index-header;
+	position: fixed !important;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	
+	.header-toolbar {
+		
+		@header-logo-height-new: 32px;
+		@header-logo-width-new: @header-logo-width-original * (@header-logo-height-new / @header-logo-height-original);
+		
+		position: relative;
+			
+		.header-logo {
+			
+			display: block;
+			width: @header-logo-width-new;
+			height: @header-logo-height-new;
+			background-image:url("@{image-path}layout/header/header-logo.png");
+			.background-size(100% 100%);
+			margin: 0px;
+			float: left;
+			
+			a {
+				
+				display: block;
+				width: 100%;
+				height: 100%;
+				
+				span {
+					
+					display: none;
+					
+				}
+				
+			}
+			
+		}
+		
+		.header-navigation {
+			
+			float: right;
+			.clearfix();
+			display: none;
+			
+			.navigation-menu {
+				
+				margin: 0px;
+				float: left;
+				
+				.navigation-menu-item {
+					
+					line-height: @header-logo-height-new;
+					margin: 0px;
+					float: left;
+					font-weight: 600;
+					font-size: 16px;
+					
+					> a:not(.button) {
+						
+						display: block;
+						padding: 0px;
+						line-height: @header-logo-height-new;
+						
+						&.focus,
+						&:hover {
+							
+						}
+						
+					}
+					
+					&:last-child {
+						
+						margin-right: 0px;
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+
+
+/* ==================================================================================================== */
+/*                                                                                                      */
+/* Screen Size: Small (@screen-small) and above                                                         */
+/*                                                                                                      */
+/* ==================================================================================================== */
+
+@media (min-width: @screen-small) {
+	
+	#header,
+	header {
+		
+		.header-toolbar {
+			
+			@header-logo-height-new: 40px;
+			@header-logo-width-new: @header-logo-width-original * (@header-logo-height-new / @header-logo-height-original);
+			@header-content-height: @button-height;
+			
+			padding: (@primary-margin-short-screen-small * 0.75) 0px;
+			
+			.header-logo {
+				
+				width: @header-logo-width-new;
+				height: @header-logo-height-new;
+				
+			}
+			
+			.header-navigation {
+				
+				display: block;
+				
+				.navigation-menu {
+					
+					.navigation-menu-item {
+						
+						margin-right: @primary-margin-short-screen-small;
+						
+						> a.button {
+							
+							padding-left: 20px;
+							padding-right: 20px;
+							
+						}
+						
+						> a:not(.button) {
+							
+							line-height:  @header-logo-height-new;
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+
+
+/* ==================================================================================================== */
+/*                                                                                                      */
+/* Screen Size: Medium (@screen-medium) and above                                                       */
+/*                                                                                                      */
+/* ==================================================================================================== */
+
+@media (min-width: @screen-medium) {
+	
+	#header,
+	header {
+		
+		.header-toolbar {
+			
+			@header-logo-height-new: 40px;
+			@header-logo-width-new: @header-logo-width-original * (@header-logo-height-new / @header-logo-height-original);
+			@header-content-height: @button-height;
+			
+			padding: (@primary-margin-short-screen-medium * 0.75) 0px;
+			
+			.header-logo {
+				
+				width: @header-logo-width-new;
+				height: @header-logo-height-new;
+				
+			}
+			
+			.header-navigation {
+				
+				.navigation-menu {
+					
+					.navigation-menu-item {
+						
+						margin-right: @primary-margin-short-screen-medium;
+						
+						> a.button {
+							
+							padding-left: 20px;
+							padding-right: 20px;
+							
+						}
+						
+						> a:not(.button) {
+							
+							line-height:  @header-logo-height-new;
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+
+
+/* ==================================================================================================== */
+/*                                                                                                      */
+/* Screen Size: Large (@screen-large) and above                                                         */
+/*                                                                                                      */
+/* ==================================================================================================== */
+
+@media (min-width: @screen-large) {
+	
+	#header,
+	header {
+		
+		.header-toolbar {
+			
+			@header-logo-height-new: 40px;
+			@header-logo-width-new: @header-logo-width-original * (@header-logo-height-new / @header-logo-height-original);
+			
+			padding: @primary-margin-short-screen-large * 0.75 0px;
+			
+			.header-logo {
+				
+				width: @header-logo-width-new;
+				height: @header-logo-height-new;
+				
+			}
+			
+			.header-navigation {
+				
+				.navigation-menu {
+					
+					.navigation-menu-item {
+						
+						margin-right: @primary-margin-short-screen-large;
+						
+						> a.button {
+							
+							padding-left: 20px;
+							padding-right: 20px;
+							
+						}
+						
+						> a:not(.button) {
+							
+							line-height:  @header-logo-height-new;
+							
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}
+
+
+
+/* ==================================================================================================== */
+/*                                                                                                      */
+/* Responsive Styles: Retina Displays                                                                   */
+/*                                                                                                      */
+/* ==================================================================================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+	
+	#header,
+	header {
+		
+	}
+	
+}
