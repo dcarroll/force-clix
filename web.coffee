@@ -18,7 +18,7 @@ app = stdweb("force-cli")
 app.use express.static("#{__dirname}/public")
 
 app.get "/", (req, res) ->
-  res.send "ok"
+  res.render "index.jade"
 
 app.get "/auth/credentials", (req, res) ->
   try
