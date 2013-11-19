@@ -32,6 +32,7 @@ app.get "/auth/credentials", (req, res) ->
         postgres (err, db) ->
           db.query "INSERT INTO logins (email, org, date) VALUES ($1, $2, NOW())", [ users[0].Email, orgs[0].Name ], (err, rows) ->
             console.log "error saving login", err if err
+            db.end()
   catch err
     console.log "error saving login", err
   res.send "ok"
