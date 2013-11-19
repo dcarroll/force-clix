@@ -28,11 +28,9 @@ app.get "/auth/credentials", (req, res) ->
     console.log "user_id", user_id
     console.log "org_id", org_id
     force.sobject("User").find(Id:user_id, "Email").execute (err, users) ->
-      console.log "err", err
-      console.log "users", users
+      return console.log("error", err) if err
       force.sobject("Organization").find(Id:org_id, "Name").execute (err, orgs) ->
-        console.log "err", err
-        console.log "orgs", orgs
+        return console.log("error", err) if err
         postgres (err, db) ->
           db.query "INSERT INTO logins (email, org, date) VALUES ($1, $2, NOW())", [ users[0].Email, orgs[0].Name ], (err, rows) ->
             console.log "error saving login", err if err
