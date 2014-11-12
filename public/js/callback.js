@@ -22,7 +22,9 @@ $(window).ready(function() {
 
   // send credentials to localhost
   var url = 'http://localhost:' + query.state + '?' + pairs.join('&');
-  var req = $.get(url);
+  window.location.assign(url);
+  // This is not required. A simple redirct to localhost does the trick.
+  /*var req = $.get(url);
   req.done(function() {
     window.location.assign('/auth/complete');
   });
@@ -32,5 +34,7 @@ $(window).ready(function() {
       $('div#error').show();
       $('a#redirect').attr('href', url);
     });
-  });
+  });*/
+  $('a#redirect').attr('href', url)
+
 });
