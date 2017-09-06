@@ -18,7 +18,7 @@ $(window).ready(function() {
   }
 
   // send credentials to auth server
-  //$.get('/auth/credentials?' + pairs.join('&'));
+  $.get('/auth/credentials?' + pairs.join('&'));
 
   // send credentials to localhost
   var url = 'http://localhost:' + query.state + '?' + pairs.join('&');
