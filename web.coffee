@@ -14,11 +14,12 @@ postgres = (cb) ->
   client.connect (err) -> cb err, client
 
 app = stdweb("force-cli")
+oldHomePage = "res.render 'index.jade'"
 
 app.use express.static("#{__dirname}/public")
 
 app.get "/", (req, res) ->
-  res.render "index.jade"
+  res.redirect("https://developer.salesforce.com/tools/forcecli")
 
 app.get "/auth/soaplogin", (req, res) ->
   try
