@@ -7736,7 +7736,7 @@ table th[class*="span"],
   border-color: none;
   color: #ffffff;
   text-shadow: none;
-  background-color: #7c6bb2;
+  background-color: #39af9c;
   -webkit-box-shadow: none;
   box-shadow: none;
   behavior: url("/resources/javascript/libraries/CSS3Pie/PIE.php");
@@ -7756,7 +7756,7 @@ table th[class*="span"],
   border-color: none;
   color: #ffffff;
   text-shadow: none;
-  background-color: #8e7fbc;
+  background-color: #39af9c;
   -webkit-box-shadow: none;
   box-shadow: none;
   behavior: url("/resources/javascript/libraries/CSS3Pie/PIE.php");
@@ -7801,7 +7801,7 @@ table th[class*="span"],
   border-color: none;
   color: #ffffff;
   text-shadow: none;
-  background-color: #7c6bb2;
+  background-color: #39af9c;
   -webkit-box-shadow: none;
   box-shadow: none;
   behavior: url("/resources/javascript/libraries/CSS3Pie/PIE.php");
@@ -25517,7 +25517,7 @@ hr {
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #stage .stage-pod.stage-pod-purple {
-  background: #58488a;
+  background: #0c4a9b;
 }
 #stage .stage-pod.stage-pod-purple a:not(.button) {
   color: #c2badb;
