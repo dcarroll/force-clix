@@ -1,1 +1,1 @@
-web: bin/web
+web: start_nginx.sh
