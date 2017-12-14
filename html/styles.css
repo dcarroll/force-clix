@@ -2985,7 +2985,7 @@ p.short {
   margin-bottom: 7.5px;
 }
 p a {
-  color: #58488a;
+  color: #0f0e11;
   text-decoration: none;
 }
 p a:hover {
@@ -3795,7 +3795,7 @@ h2,
   line-height: 32px;
   text-transform: normal;
   font-style: normal;
-  color: #58488a;
+  color: #0b0913;
   margin: 45px 0px 30px 0px;
   /* ---------------------------------------------------------------------------------------------------- */
   /* Inverse                                                                                              */
@@ -25517,7 +25517,7 @@ hr {
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 #stage .stage-pod.stage-pod-purple {
-  background: #0c4a9b;
+  background: #0c4a9b;G
 }
 #stage .stage-pod.stage-pod-purple a:not(.button) {
   color: #c2badb;
@@ -25962,7 +25962,7 @@ footer .footer-navigation .navigation-menu .navigation-menu-item:last-child {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  background: #eeecf5;
+  background: #575b5c;
   padding: 30px 5px 5px 5px;
   margin-bottom: 30px;
   position: relative;
@@ -25997,7 +25997,7 @@ footer .footer-navigation .navigation-menu .navigation-menu-item:last-child {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
 .terminal-window .terminal-window-content p .emphasis {
-  color: #58488a;
+  color: #121214;
 }
 .terminal-window.short {
   margin-bottom: 15px;
