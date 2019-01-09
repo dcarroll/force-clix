@@ -10,7 +10,7 @@
     "nodemon":         "0.7.x",
     "node-salesforce": "~0.6.3",
     "node-uuid":       "1.4.x",
-    "pg":              "~2.8.2",
+    "pg":              ">=2.11.2",
     "redis-url":       "0.2.x"
   },
 
