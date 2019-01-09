@@ -5,7 +5,7 @@
   "dependencies": {
     "async":           "0.2.x",
     "coffee-script":   "1.2.x",
-    "express":         "3.0.x",
+    "express":         ">=3.11.0",
     "jade":            "0.35.x",
     "nodemon":         "0.7.x",
     "node-salesforce": "~0.6.3",
